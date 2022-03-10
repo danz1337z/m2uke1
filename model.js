@@ -7,9 +7,10 @@
 
 
 const model = {
+
     app: {
-        currentPage: 'datePage',
-        currenUser: 'Jøran',
+        currentPage: 'home',
+        currentUser: 'Jøran',
 
 
     },
