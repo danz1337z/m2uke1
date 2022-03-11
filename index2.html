@@ -1,0 +1,118 @@
+<body>
+
+    <form action="/shipping" method="POST">
+        <div class="container">
+            <h1>Delivery/Pick Up</h1>
+            <hr>
+            <input onchange="showFunctionDelivery()" type="radio" class="form-group" id="delivery" name="delivery"
+                checked> Delivery &nbsp
+            <input onchange="showFunctionPickup()" type="radio" class="form-group" id="pickup" name="delivery"> Pick Up
+            &nbsp
+            <br>
+            <!---Needed for order name, date time.-->
+            <div class="row" id="pickupStuff">
+                <div class="col-sm-3">
+                    Name: ex. John Smith
+                    <input required type="text" pattern="\D+" id="name" class="form-control" value="" name="name">
+                </div>
+                <div class="col-sm-3">
+                    Desired Date:
+                    <input required type="date" id="date" class="form-control" name="date">
+                </div>
+                <div class="col-sm-3" id="time">
+                    Desired Time:
+                    <select class="form-control">
+                        <option value="7am">7am</option>
+                        <option value="8am">8am</option>
+                        <option value="9am">9am</option>
+                        <option value="10am">10am</option>
+                        <option value="11am">11am</option>
+                        <option value="12pm">12pm</option>
+                        <option value="1pm">1pm</option>
+                        <option value="2pm">2pm</option>
+                        <option value="3pm">3pm</option>
+                        <option value="4pm">4pm</option>
+                    </select>
+                </div>
+
+            </div>
+        </div>
+        <br>
+        <!--delivery stuff-->
+        <div class="container" id="deliveryStuff">
+            <div class="row">
+                <div class="col-sm-3" id="deliveryOp">
+                    Address: ex. 12345 Plain Dr
+                    <input required type="text" id="address" pattern="\d+\s\D+" class="form-control" value=""
+                        name="address">
+                </div>
+                <div class="col-sm-3" id="deliveryOp">
+                    City: ex. Austin
+                    <input required type="text" id="city" pattern="\D+" class="form-control" value="" name="city">
+                </div>
+                <div class="col-sm-3" id="deliveryOp">
+                    State:
+                    <select required class="form-control" id="state" name="statename">
+                        <option value="">Please Select One</option>
+                        <option value="AK">Alaska</option>
+                        <option value="AL">Alabama</option>
+                        <option value="AR">Etc.</option>
+
+                    </select>
+                </div>
+                <div class="col-sm-3" id="deliveryOp">
+                    Zip Code: ex. 12345
+                    <input required id="zip" type="text" pattern="\d{5}" class="form-control" value="" name="zipcode">
+                </div>
+            </div>
+        </div><br><br>
+
+        <script>
+            let d = document.getElementById("delivery"),
+                p = document.getElementById("pickup");
+        </script>
+        <footer class="container-fluid text-center">
+            <a href="/billing"><button type="submit" class="btn btn-danger">Next</button></a>
+        </footer>
+    </form>
+
+
+    <script>
+
+        function showFunctionDelivery() {
+            var x = document.getElementById("deliveryStuff");
+            var y = document.getElementById("pickupStuff");
+
+            if (x.style.display === "none") {
+                x.style.display = "block";
+
+
+            } else {
+                x.style.display = "block";
+
+
+            }
+        }
+
+        function showFunctionPickup() {
+            var x = document.getElementById("deliveryStuff");
+            var y = document.getElementById("pickupStuff");
+
+            if (x.style.display === "block") {
+                x.style.display = "none";
+
+
+
+            } else {
+                x.style.display = "none";
+
+
+            }
+        }
+
+
+
+
+    </script>
+
+</body>

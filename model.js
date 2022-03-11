@@ -44,7 +44,7 @@ const model = {
     users: [
         { name: 'Jøran', pwd: 'Admin' },
     ],
-    // data for spørsmål i meningsmålinen
+    // data for spørsmål i meningsmålingen
     qAndA: [
         {
             id: 1,
